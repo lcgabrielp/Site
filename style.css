@@ -1,63 +1,196 @@
-body{
-    background: #0d1b2a;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #ffffff;
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    font-family: 'Poppins', sans-serif;
+    color: white;
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    animation: entradaSite 1s ease;
 }
 
-header{
-    background: #0d1b2a;
-    padding: 20px;
+header {
+    padding: 40px 20px;
     text-align: center;
+    position: relative;
 }
 
-main{
+h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h3 {
+    margin-top: 8px;
+    font-weight: 400;
+    color: #d1d5db;
+    letter-spacing: 0.5px;
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6a00, #ff9a3c);
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+.menu-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.menu-hamburger {
+    width: 25px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.menu-hamburger span {
+    display: block;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.menu-lateral {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: #1e293b;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 1999;
+}
+
+.menu-lateral a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu-lateral a:hover {
+    color: #ffb347;
+}
+
+.menu-lateral.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+main {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 25px;
+    padding: 30px;
 }
 
 .content {
-    background: #2c5364;
-    padding: 20px;
+    background: linear-gradient(135deg, #ff7b00, #ffb347);
+    padding: 25px;
     border-radius: 16px;
-    transition: 0.4s ease;
+    color: white;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
+
 .content:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45), 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ff9500, #ffc266);
+}
+
+.content h2 {
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.habilidades-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.habilidade {
+    background: rgba(255, 179, 71, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: default;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.habilidade:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+    background: rgba(255, 179, 71, 0.45);
 }
 
 footer {
-    background: transparent;
-    color: #ffffff;
     text-align: center;
-    padding: 4px;
+    padding: 25px;
 }
 
-h1, h3 {
+.footer-contato {
+    font-size: 15px;
+}
+
+.footer-contato i {
+    color: #ff9a3c;
+    margin-right: 8px;
+}
+
+footer a {
     color: white;
+    text-decoration: none;
+    transition: 0.3s;
 }
-.direitos { 
-  font-size: 12px; 
-  margin-top: 2px; }
 
-  footer { 
-    background: transparent; 
-    color: #ffffff; 
-    text-align: center; 
-    padding: 4px; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: aqua; } 
+footer a:hover {
+    color: #ffb347;
+}
 
-    footer a { 
-      color:#ffffff; 
-      text-decoration: none; } 
-      
-      footer a:hover { 
-        text-decoration: underline; } 
-        
-        .footer-contato { margin: 2px; font-size: 12px; }
+.direitos {
+    font-size: 12px;
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+@keyframes entradaSite {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,51 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio-Lucas Gabriel</title>
+    <title>Lucas Gabriel | Desenvolvedor em Formação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  
+
     <header>
+        <div class="menu-container">
+            <div class="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="menu-lateral">
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+
         <h1>Lucas Gabriel</h1>
-        <h3>Estudante de Desenvolvimento de Sistemas</h3>
+        <h3>Estudante de Análise e Desenvolvimento de Sistemas</h3>
     </header>
+
     <main>
-<section class="content">
-    <h2>Sobre mim</h2>
-    <p>Sou estudante de Desenvolvimento de Sistemas, com forte interesse em tecnologia e no desenvolvimento de soluções que gerem impacto real. Tenho me dedicado ao aprendizado contínuo, buscando aprimorar minhas habilidades em programação, lógica computacional e boas práticas de desenvolvimento de software,Estou em constante evolução técnica, explorando conceitos de desenvolvimento front-end e back-end, além de me aprofundar em metodologias ágeis, organização de projetos e qualidade de código. Acredito que a tecnologia é uma ferramenta poderosa para transformar ideias em soluções eficientes e inovadoras,Tenho perfil proativo, organizado e focado em resultados, sempre aberto a novos desafios que contribuam para meu crescimento profissional e pessoal. Busco oportunidades onde eu possa aplicar meus conhecimentos, colaborar em equipe, aprender com profissionais experientes e agregar valor por meio do desenvolvimento de aplicações funcionais, escaláveis e bem estruturadas.</p>
-    </section>
-<section class="content">
-    <h2>Meus serviços</h2>
-    <p>Ofereço serviços na área de Desenvolvimento de Sistemas, com foco na criação de soluções organizadas, eficientes e alinhadas às boas práticas de programação, atuando no desenvolvimento de aplicações web e sistemas, estruturando projetos de forma clara, funcional e escalável, trabalhando na construção de interfaces intuitivas e responsivas, na implementação de lógica de negócio e na integração com banco de dados, realizando manutenção, correção e melhoria de códigos existentes, prezando pela qualidade, desempenho e organização das aplicações, desenvolvendo projetos acadêmicos e práticos, aplicando conceitos de lógica de programação, algoritmos e modelagem de dados para transformar ideias em soluções funcionais, mantendo aprendizado constante e atualização contínua para acompanhar as evoluções da tecnologia e entregar resultados cada vez mais eficientes e profissionais.</p>
-    </section>
-<section class="content">
-    <h2>Minhas habilidades</h2>
-    <p>Possuo conhecimentos básicos em lógica de programação e desenvolvimento de sistemas, com experiência em projetos acadêmicos e práticos, focado na organização de código e na aplicação de boas práticas, desenvolvimento de interfaces simples e funcionais, compreensão de conceitos de banco de dados e estruturação de aplicações, capacidade de aprendizado rápido, pensamento lógico, proatividade, dedicação e interesse constante em evoluir na área de tecnologia.</p>
-</section>
- </main>
-    <footer>
-    <div class="footer-contato">
-    <h3>Contato</h3>
-   <p>Email: 
-<a href="mailto:lucas.dtl13@gmail.com">
-lucas.dtl13@gmail.com
-</a>
-</p>
+        <section class="content" id="home">
+            <h2>Sobre mim</h2>
+            <p>Olá! Meu nome é <strong>Lucas Gabriel</strong> e estou cursando <strong>Análise e Desenvolvimento de
+                    Sistemas</strong>. Atualmente, estou estudando <strong>Linguagens de Programação</strong> para
+                aprimorar minhas habilidades em desenvolvimento de software.</p>
+            <p>Gosto de aprender coisas novas, criar soluções digitais e transformar ideias em projetos reais. Meu
+                objetivo é crescer como desenvolvedor, explorando diferentes áreas da programação e contribuindo com
+                projetos que tenham impacto positivo.</p>
+        </section>
 
-<p>LinkedIn: 
-<a href="https://www.linkedin.com/in/lcasgp" target="_blank">
-www.linkedin.com/in/lcasgp
-</a>
-</p>
-  </div>
+        <section class="content" id="servicos">
+            <h2>Meus serviços</h2>
+            <p>Como estudante de <strong>Análise e Desenvolvimento de Sistemas</strong>, aplico meus conhecimentos em
+                <strong>HTML, CSS, JavaScript e Python</strong> para criar projetos digitais e experimentar soluções
+                inovadoras.</p>
+            <p>Posso desenvolver <strong>sites simples, protótipos de sistemas e pequenos aplicativos</strong>, sempre
+                seguindo boas práticas de programação e buscando aprender novas tecnologias.</p>
+            <p>Meu objetivo é transformar ideias em projetos reais, explorando diferentes áreas do desenvolvimento e
+                aprimorando minhas habilidades a cada projeto.</p>
+        </section>
 
-  <p class="direitos">
-    © 2026 Todos os direitos reservados.
-  </p>
+        <section class="content" id="habilidades">
+            <h2>Minhas habilidades</h2>
+            <div class="habilidades-container">
+                <div class="habilidade">HTML & CSS</div>
+                <div class="habilidade">JavaScript</div>
+                <div class="habilidade">Python</div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="footer-contato">
+            <h3>Contato</h3>
+            <p><i class="fa-solid fa-envelope"></i><a href="mailto:lucassgp.tech@gmail.com">lucassgp.tech@gmail.com</a>
+            </p>
+            <p><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/lcasgp"
+                    target="_blank">LinkedIn</a></p>
+        </div>
+        <p class="direitos">© 2026 Lucas Gabriel — Desenvolvedor em Formação</p>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.menu-hamburger');
+        const menu = document.querySelector('.menu-lateral');
+
+        // Clique abre/fecha
+        hamburger.addEventListener('click', () => menu.classList.toggle('show'));
+
+        // Hover abre/fecha
+        hamburger.addEventListener('mouseenter', () => menu.classList.add('show'));
+        hamburger.addEventListener('mouseleave', () => setTimeout(() => {
+            if (!menu.matches(':hover')) menu.classList.remove('show');
+        }, 100));
+        menu.addEventListener('mouseenter', () => menu.classList.add('show'));
+        menu.addEventListener('mouseleave', () => menu.classList.remove('show'));
+    </script>
+
 </body>
+
 </html>
